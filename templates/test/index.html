@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Vue</title>
+
+<!-- production version, optimized for size and speed
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<link rel="stylesheet" href="css/color.css">
+<link rel="stylesheet" href="css/responsive.css"> -->
+<link rel="stylesheet" type="text/css" href="../otherstatic/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="vue.min.js"></script>
+<script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{ hello }}
+    
+        <div>
+            <input v-model="message" placeholder="edit me">
+            <p>Message: {{ message }}</p>
+            <p>message:</p>
+            <p style="white-space: pre-line">{{ message }}</p>
+            <textarea v-model="message" placeholder="add multiple lines"></textarea>
+        </div>
+        <button v-on:click="increase"> Click Me</button>
+        <p>{{ counter }}</p>
+    </div>
+
+
+
+<div class="section">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="parent1">
+               <div class="child1"></div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="grandparent2">
+               <div class="parent2">
+                  <div class="child2"></div>
+               </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="grandparent3">
+               <div class="parent3">
+                  <div class="child3"></div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<br>
+
+<div class="section">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="parent1">
+               <div class="child1"></div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="grandparent2">
+               <div class="parent2">
+                  <div class="child2"></div>
+               </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="grandparent3">
+               <div class="parent3">
+                  <div class="child3"></div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+<script type="text/javascript">
+    const app = new Vue({
+        el: '#app',
+        data:{
+            hello: "Hello World",
+            message: 1,
+            counter: 0,
+        },
+
+        methods: {
+            increase: function() {
+                this.counter++;
+            }
+        }
+
+    });
+</script>
+</body>
+</html>
