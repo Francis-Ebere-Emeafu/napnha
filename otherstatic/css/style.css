@@ -1801,7 +1801,7 @@ footer .colla-apps li a i {
 }
 
 .copyright {
-  color: #7d8391;
+  color: #ffffff;
   float: left;
 }
 
@@ -1814,8 +1814,8 @@ footer.light {
   /* #88bab2 */
   /* f4f8ff */
   /* dark-bg */
-  /* 03a845 */
-    background: #03a845 none repeat scroll 0 0;
+  /* 03a845 036329 047c34*/
+    background: #036329 none repeat scroll 0 0;
 }
 footer.light .widget .widget-title > h4 {
     color: #444;
@@ -7110,7 +7110,8 @@ form.fule-type > p {
     display: inline-block;
     width: 100%;
 	padding: 40px 0;
-	margin-left: 50px;
+  margin-left: 50px;
+  color: #ffffff;
 }
 .servize > i {
     display: inline-block;
@@ -7140,7 +7141,8 @@ form.fule-type > p {
     width: 100%;
 }
 .space.dark-bg {
-    background: #03a845;
+    background: #036329;
+    /* 047c34 */
 }
 
 .space.dark-bg .container {
