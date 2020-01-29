@@ -6839,7 +6839,7 @@ form.fule-type > p {
 /*--- Responsive Header ---*/
 
 .res-top {
-    background: #000000 none repeat scroll 0 0;
+    background: #023e1a none repeat scroll 0 0;
     color: #fff;
     padding: 10px 20px;
     width: 100%;
@@ -6859,7 +6859,8 @@ form.fule-type > p {
 }
 .responsive-header .logo {
     display: inline-block;
-    width: 35%;
+    /* width: auto;
+    height: 15%; */
 }
 
 .logomenu-bar {
@@ -6872,6 +6873,11 @@ form.fule-type > p {
     width: 100%;
 }
 
+.logomenu-bar .logo img{
+  height: 70px;
+  width: auto;
+} 
+
 .res-top > ul li.post-new {
     float: right;
 	margin-right: 0;
@@ -6880,7 +6886,7 @@ form.fule-type > p {
 /*--- responsive menu dropdown ---*/
 
 .responsive-menu {
-  background: #1F1D1D none repeat scroll 0 0;
+  background: #024e20 none repeat scroll 0 0;
   padding: 45px;
   position: fixed;
   right: -100%;
@@ -6931,7 +6937,8 @@ form.fule-type > p {
 }
 
 .responsive-menu ul li {
-  color: #878787;
+  color: #cccccc;
+  /* #878787; */
   float: left;
   font-size: 15px;
   position: relative;
@@ -6949,7 +6956,7 @@ form.fule-type > p {
 }
 
 .responsive-menu ul li a {
-  border-bottom: 1px solid #353535;
+  border-bottom: 1px solid #b3b3b3;
   color: inherit;
   float: left;
   padding: 15px 30px 15px 20px;

@@ -4,14 +4,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="top-links">
-                            <li><i class="flaticon-support"></i><a href="#" title="">support center</a></li>
-                            <li><i class="flaticon-info"></i><a href="#" title="">Faq's</a></li>
+                            <li><i class="flaticon-support"></i><a href="{% url 'home' %}" title="">support center</a></li>
+                            <li><i class="flaticon-info"></i><a href="{% url 'home' %}" title="">Faq's</a></li>
                         </ul>
                         <div class="login-area">
                             <ul>
                                 <li class="log-in"><a href="{% url 'home' %}" title="Login"><i class="flaticon-unlocked"></i> login</a></li>
                                 <li class="Register"><a href="{% url 'home' %}" title="Register"><i class="flaticon-checked"></i> register</a></li>
-                                <li class=""><a href="#" title="">+post</a></li>
+                                <li class=""><a href="{% url 'home' %}" title="">+post</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,35 +98,32 @@
 		<div class="responsive-header">
 			<div class="res-top">
 				<ul>
-					<li><a href="#" title="Home"><i class="flaticon-home"></i></a></li>
-					<li><a href="#" title="Faq's"><i class="flaticon-info"></i></a></li>
-					<li><a href="#" title="Support center"><i class="flaticon-support"></i></a></li>
-					<li><a href="#" title="Login"><i class="flaticon-unlocked"></i></a></li>
-					<li><a href="#" title="New register"><i class="flaticon-checked"></i></a></li>
-					<li class="post-new"><a href="#" title="New post">+Post</a></li>
+					<li><a href="{% url 'home' %}" title="Home"><i class="flaticon-home"></i></a></li>
+					<li><a href="{% url 'home' %}" title="Faq's"><i class="flaticon-info"></i></a></li>
+					<li><a href="{% url 'home' %}" title="Support center"><i class="flaticon-support"></i></a></li>
+					<li><a href="{% url 'home' %}" title="Login"><i class="flaticon-unlocked"></i></a></li>
+					<li><a href="{% url 'home' %}" title="New register"><i class="flaticon-checked"></i></a></li>
+					<li class="post-new"><a href="{% url 'home' %}" title="New post">+Post</a></li>
 				</ul>
 			</div>
 			<div class="logomenu-bar">
-				<div class="logo"><a href="index.html" title=""><img src="{% static 'images/napnha_logo.png' %}" alt=""></a></div>
+				<div class="logo"><a href="{% url 'home' %}" title=""><img src="{% static 'images/napnha_logo.png' %}" alt=""></a></div>
 				<span class="responsviemenu-btn"><i class="flaticon-menu-1"></i></span> 
 			</div>
 			<div class="responsive-menu">
 				<span class="close-btn"><i class="flaticon-error-1"></i></span>
 				<ul>
-					<li><a href="index.html" title="">Home</a></li>
-					<li class="menu-item-has-children"><a href="#" title="">cars</a>
+					<li><a href="{% url 'home' %}" title="">Home</a></li>
+					<li class="menu-item-has-children"><a href="#" title="">About Us</a>
 						<ul class="sub-menu">
-							<li><a href="index-after-login.html" title="">page after login</a></li>
-							<li><a href="cars.html" title="">cars</a></li>
-							<li><a href="car-profile.html" title="">car profile</a></li>
-							<li><a href="car-detail.html" title="">cars detail</a></li>
-							<li><a href="create-route-notification.html" title="">route notification</a></li>
-							<li><a href="submit-car-intro.html" title="">Submit car introduction</a></li>
-							<li><a href="submit-car-for-rent.html" title="">submit car for rent</a></li>
-							<li><a href="submit-route.html" title="">submit car route</a></li>
+							<li><a href="{% url 'home' %}" title="">Our Mission</a></li>
+							<li><a href="{% url 'home' %}" title="">Leadership</a></li>
+							<li><a href="{% url 'home' %}" title="">About NAPNHA</a></li>
 						</ul>
 					</li>
-					<li class="menu-item-has-children"><a href="#" title="">rides</a>
+					<li><a href="{% url 'home' %}" title="">Contact Us</a></li>
+					{% comment %}
+					<li class="menu-item-has-children"><a href="#" title="">Contact Us</a>
 						<ul class="sub-menu">
 							<li><a href="ride-listing.html" title="">ride listing</a></li>
 							<li><a href="ride-request.html" title="">ride request</a></li>
@@ -164,6 +161,7 @@
 							<li><a href="404.html" title="">404 Page</a></li>
 						</ul>
 					</li>
+					{% endcomment %}
 				</ul>
 			</div>
 		</div><!-- Responsive Header -->
