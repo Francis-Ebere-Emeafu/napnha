@@ -61,12 +61,12 @@
 									{% endcomment %}
 									<li><a href="#" title="">About Us</a>
 										<ul>
-											<li><a href="" title="">Our Mission</a></li>
-											<li><a href="" title="">Leadership</a></li>
-											<li><a href="" title="">About NAPNHA</a></li>
+											<li><a href="{% url 'mission' %}" title="">Our Mission</a></li>
+											<li><a href="{% url 'vision' %}" title="">Our Vision</a></li>
+											<li><a href="{% url 'about' %}" title="">About NAPNHA</a></li>
 										</ul>
 									</li>
-									<li><a href="#" title="">Contact Us</a></li>
+									<li><a href="{% url 'contact' %}" title="">Contact Us</a></li>
 										
 									
 									{% comment %} 									 
@@ -116,12 +116,12 @@
 					<li><a href="{% url 'home' %}" title="">Home</a></li>
 					<li class="menu-item-has-children"><a href="#" title="">About Us</a>
 						<ul class="sub-menu">
-							<li><a href="{% url 'home' %}" title="">Our Mission</a></li>
-							<li><a href="{% url 'home' %}" title="">Leadership</a></li>
-							<li><a href="{% url 'home' %}" title="">About NAPNHA</a></li>
+							<li><a href="{% url 'mission' %}" title="">Our Mission</a></li>
+							<li><a href="{% url 'vision' %}" title="">Our Vision</a></li>
+							<li><a href="{% url 'about' %}" title="">About NAPNHA</a></li>
 						</ul>
 					</li>
-					<li><a href="{% url 'home' %}" title="">Contact Us</a></li>
+					<li><a href="{% url 'contact' %}" title="">Contact Us</a></li>
 					{% comment %}
 					<li class="menu-item-has-children"><a href="#" title="">Contact Us</a>
 						<ul class="sub-menu">

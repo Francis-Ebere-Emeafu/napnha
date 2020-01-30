@@ -25,6 +25,10 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("register", TemplateView.as_view(template_name="accounts/register.html"), name="register"),
     path("login", TemplateView.as_view(template_name="accounts/login.html"), name="login"),
+    path("about", TemplateView.as_view(template_name="about.html"), name="about"),
+    path("mission", TemplateView.as_view(template_name="mission.html"), name="mission"),
+    path("vision", TemplateView.as_view(template_name="vision.html"), name="vision"),
+    path("contact", TemplateView.as_view(template_name="contact.html"), name="contact"),
 ]
 
 
