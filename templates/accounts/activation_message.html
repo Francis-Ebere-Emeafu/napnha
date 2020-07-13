@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block head_title %}Login{% endblock head_title %}
+
+{% block content %}
+
+<div class="sub-head blackish ext-low-opacity">
+    <div class="bg-image" style="background-image: url({% static 'images/slider/napnha2.png' %})"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cola-head">
+                    <div class="head-meta">
+                        <h4>Confirmation</h4>
+                        <!-- <p>( Login to your account. )</p> -->
+                    </div>
+
+                    <div class="info-links">
+                        <a href="#" title="">NAPNHA Email Confirmation Sent</a>
+                        <a href="#" title="">Check your inbox to activate your account</a>
+                        {% comment %} <span><i class="fa fa-phone"></i>call +234(0)8063745846</span> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- subhead -->
+
+<section>
+    <div class="space">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="login-sec">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-9">
+                                <!-- <i class="fa fa-commenting-o"></i> -->
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="cola-form">
+                                    <h4><i class="fa fa-envelope-o"></i>
+                                        <br><br><span style="color:#f75f62">Hi </span>
+                                        <span style="color:#036329">{{ request.session.full_name }},</span>
+                                        <br><br>An email has been sent to your inbox.
+                                        <br><small>Please, confirm to
+                                            complete your registration!</small></h4>
+
+
+                                    <span>Already confirmed? <a href="{% url 'login' %}" title="">Login
+                                            here</a></span>
+                                    {% comment %} <span>Forgot your password? <a href="#" title="">Click here</a></span>
+                                    {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- form section -->
+
+{% endblock content %}
+
+
+
+{% block extra-js %}
+<script>
+    $('#id_username').attr('placeholder', 'Email or Phone');
+    $('#id_username').addClass('form-control1');
+
+    $('#id_password').attr('placeholder', 'Password');
+    $('#id_password').addClass('form-control1');
+
+    $('#id_button').addClass('form-control1');
+</script>
+{% endblock extra-js %}

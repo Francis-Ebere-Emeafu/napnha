@@ -1066,11 +1066,11 @@ figure {
   font-size: 15px;
   padding: 8px 20px;
 	text-transform: capitalize;
-	background: #7ba8f9;
+	background: #036329;
 	color: #fff;
 }
 button.theme-btn {
-	background: #7ba8f9;
+	background: #036329;
 	border: none;
 }
 .theme-btn.long {
@@ -2232,7 +2232,7 @@ footer.light .colla-apps li a:hover{color: #fff;}
   color: #fff;
   display: block;
   width: 170px;
-  background: #7290fe;
+  background: #036329;
 }
 
 .cola-form {

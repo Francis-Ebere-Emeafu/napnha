@@ -1,9 +1,249 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% comment %} {% load widget_tweaks %} {% endcomment %}
 
 
 {% block head_title %}Register{% endblock head_title %}
 
 {% block content %}
 
+
+<div class="sub-head blackish ext-low-opacity">
+    <div class="bg-image" style="background-image: url({% static 'images/slider/napnha2.png' %})"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cola-head">
+                    <div class="head-meta">
+                        <h4>Register</h4>
+                        <!-- <p>( Login to your account. )</p> -->
+                    </div>
+                    
+                    <div class="info-links">
+                        <a href="#" title="">NAPNHA Exclusive Registration</a>
+                        <a href="#" title="">Provide your Award Details</a>
+                        {% comment %} <span><i class="fa fa-phone"></i>call +234(0)8063745846</span> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- subhead -->
+
+<section>
+    <div class="space">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="login-sec">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                            {% comment %} 
+                            <div class="col-md-4">
+                                <div class="log-with-fb">
+                                
+                                    <h4>Login in seconds:</h4>
+                                    <a class="facebook" href="#" title=""><i class="fa fa-facebook"></i>facebook</a>
+                                    <a class="google" href="#" title=""><i class="fa fa-google-plus"></i>Google</a>
+                                    <a class="twitter" href="#" title=""><i class="fa fa-twitter"></i>Twitter</a>
+
+                                </div>
+                            </div>
+                            {% endcomment %}
+                            </div>
+
+                            <div class="col-lg-8 col-sm-8">
+                                <div class="cola-form">
+                                    <h4><i class="flaticon-sign-in"></i>Register:</h4>
+                                    {% comment %} flaticon-key {% endcomment %}
+                                    <form method="post">{% csrf_token %}
+                                    {% if form.non_field_errors %}
+                                        {% for error in form.non_field_errors %}
+                                            <div class="alert alert-danger">
+                                                {{ error }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.first_name.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.first_name.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>First Name</label> {% endcomment %}
+                                                    {{ form.first_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.surname.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.surname.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>Middle Name</label> {% endcomment %}
+                                                    {{ form.surname }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.email.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.email.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>Surname</label> {% endcomment %}
+                                                    {{ form.email }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.phone.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.phone.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>Phone</label> {% endcomment %}
+                                                    {{ form.phone }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.password.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.password.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>Password</label> {% endcomment %}
+                                                    {{ form.password }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    {% if form.confirm.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.confirm.errors }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% comment %} <label>Confirm</label> {% endcomment %}
+                                                    {{ form.confirm }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <button type="submit" id="button" class="theme-btn">Register</button>
+                                     
+                                    </form>
+                                   <span>Already a member? <a href="{% url 'login' %}" title="">Login here</a></span>
+                                   {% comment %} <span>Forgot your password? <a href="#" title="">Click here</a></span> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>             
+            </div>
+        </div>
+    </div>
+</section><!-- form section -->
+
+{% comment %}
+       <section>
+        	<div class="space">
+        		<div class="container">
+        			<div class="row">
+        				<div class="col-md-12">
+                        	<div class="login-sec">
+                            	<div class="row">
+                                	<div class="col-md-4">
+                                    	<div class="log-with-fb">
+                                        	<h4>Login in seconds:</h4>
+                                            <a title="" href="#" class="facebook"><i class="fa fa-facebook"></i>facebook</a>
+											<a title="" href="#" class="google"><i class="fa fa-google-plus"></i>Google</a>
+											<a title="" href="#" class="twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                                        </div>
+                                    </div>
+                                    <div class="offset-lg-1 col-lg-7 col-md-8">
+                                    	<div class="cola-form">
+                                        	<h4><i class="flaticon-sign-in"></i>Register:</h4>
+                                            <form method="post">
+                                            	<label>first Name:</label>
+                                                <input type="text">
+                                                <label>last name:</label>
+                                                <input type="text">
+                                                <label>email:</label>
+                                                <input type="text">
+                                                <label>password:</label>
+                                                <input type="password">
+                                                <label>confirm password:</label>
+                                                <input type="password">
+                                                <input type="checkbox" id="checkbox">
+                                                <label for="checkbox">I accept Collabors’s <a href="#" title="">Terms & Conditions</a></label>
+                                                <button type="submit" class="theme-btn">register</button>
+                                            </form>
+                                            <span>Are you a member already? <a href="#" title="">Login here</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        			</div>
+        		</div>
+        	</div>
+        </section><!-- form section --> {% endcomment %}
+      
 {% endblock content %}
+
+
+{% block extra-js %}
+<script>
+    $('#id_first_name').attr('placeholder', 'First Name');
+    $('#id_first_name').addClass('form-control1');
+
+    $('#id_middle_name').attr('placeholder', 'Middle Name');
+    $('#id_middle_name').addClass('form-control1');
+
+    $('#id_surname').attr('placeholder', 'Surname');
+    $('#id_surname').addClass('form-control1');
+
+    $('#id_email').attr('placeholder', 'Email');
+    $('#id_email').addClass('form-control1');
+
+    $('#id_phone').attr('placeholder', 'Phone Number');
+    $('#id_phone').addClass('form-control1');
+    
+    $('#id_password').attr('placeholder', 'Password');
+    $('#id_password').addClass('form-control1');
+
+    $('#id_confirm').attr('placeholder', 'Confirm Password');
+    $('#id_confirm').addClass('form-control1');
+
+    $('#id_button').addClass('form-control1');
+  </script>
+{% endblock extra-js %}
+
+  

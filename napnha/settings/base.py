@@ -125,3 +125,36 @@ STATICFILES_DIRS = (
 
 MEDIA_URL =  "/media/"
 MEDIA_ROOT = os.path.join(STATIC_ROOT, "media")
+
+
+# Global settings of HASH-ID HashidAutoField
+HASHID_FIELD_SALT = "icode-programming"
+HASHID_FIELD_ALLOW_INT_LOOKUP = True
+
+
+
+# Sending Email to registering members
+# EMAIL_HOST = 'smtp.webfaction.com'
+# EMAIL_HOST_USER = 'napnha_registrations'
+# EMAIL_HOST_PASSWORD = 'pass.p1985'
+# DEFAULT_FROM_EMAIL = 'registrations@napnha.emeafu.com'
+# SERVER_EMAIL = 'registrations@napnha.emeafu.com'
+
+# EMAIL_BACKEND = 'post_office.EmailBackend'
+
+
+# Sending Email to registering members
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'freemandigit'
+EMAIL_HOST_PASSWORD = 'freemanbox12'
+DEFAULT_FROM_EMAIL = 'info@digifracktechnologies.com'
+SERVER_EMAIL = 'info@digifracktechnologies.com'
+
+# EMAIL_BACKEND = 'post_office.EmailBackend'
+
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'freemandigits@gmail.com'
+# EMAIL_HOST_PASSWORD = 'freemanbox12'
+# EMAIL_PORT = 587
+# https://medium.com/@frfahim/django-registration-with-confirmation-email-bb5da011e4ef

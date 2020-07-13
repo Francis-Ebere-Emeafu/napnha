@@ -29,6 +29,7 @@ urlpatterns = [
     path("mission", TemplateView.as_view(template_name="mission.html"), name="mission"),
     path("vision", TemplateView.as_view(template_name="vision.html"), name="vision"),
     path("contact", TemplateView.as_view(template_name="contact.html"), name="contact"),
+    path("accounts/", include("accounts.urls")),
 ]
 
 
