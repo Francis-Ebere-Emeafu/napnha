@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 from datetime import datetime
 
-from hashid_field import HashidAutoField
+# from hashid_field import HashidAutoField
 
 class Account(models.Model):
     FEMALE = 0
