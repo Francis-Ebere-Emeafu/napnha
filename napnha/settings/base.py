@@ -139,11 +139,11 @@ HASHID_FIELD_ALLOW_INT_LOOKUP = True
 # EMAIL_HOST_PASSWORD = 'pass.p1985'
 # DEFAULT_FROM_EMAIL = 'registrations@napnha.emeafu.com'
 # SERVER_EMAIL = 'registrations@napnha.emeafu.com'
-
 # EMAIL_BACKEND = 'post_office.EmailBackend'
 
 
 # Sending Email to registering members
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_HOST_USER = 'freemandigit'
 EMAIL_HOST_PASSWORD = 'freemanbox12'
@@ -151,7 +151,6 @@ DEFAULT_FROM_EMAIL = 'info@digifracktechnologies.com'
 SERVER_EMAIL = 'info@digifracktechnologies.com'
 
 # EMAIL_BACKEND = 'post_office.EmailBackend'
-
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = 'freemandigits@gmail.com'

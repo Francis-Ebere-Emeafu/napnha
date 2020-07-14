@@ -2,10 +2,13 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.core.mail import EmailMessage, send_mail, EmailMultiAlternatives
+from django.contrib.staticfiles import finders
+from django.core.mail import EmailMessage, send_mail
+# , EmailMultiAlternatives
 from django.contrib.sites.shortcuts import get_current_site
 from email.mime.image import MIMEImage
 from django.utils.encoding import force_bytes, force_text
+# from django.utils.functional import lru_cache
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 
@@ -31,7 +34,7 @@ def register(request):
             account.save()
 
             current_site = get_current_site(request)
-            mail_subject = "Activate your NAPNHA account"
+            subject = "Activate your NAPNHA account"
             message = "Please, click on the link to confirm your email"
             html_message = render_to_string('accounts/activate_email.html', {
                 "user": new_user,
@@ -40,17 +43,29 @@ def register(request):
                 "token": account_activation_token.make_token(new_user)
             })
             to_email = username
-            # email = EmailMessage(mail_subject, message, to=[to_email])
-            # email.send()
-
+            from_email = 'info@digifracktechnologies.com'
             send_mail(
-                mail_subject,
+                subject,
                 message,
-                'info@digifracktechnologies.com',
+                from_email,
                 [to_email,],
                 fail_silently=False,
                 html_message=html_message
             )
+
+            # email = EmailMultiAlternatives(
+                # subject,
+                # message,
+                # from_email,
+                # to=[to_email],
+                # reply_to=from_email,
+                # **kwargs
+            # )
+            # email.content_subtype = "html"
+            # email.mixed_subtype = "related"
+            # email.attach_alternative(html_message, "text/html")
+            # email.attach(logo_data())
+            # email.send(fail_silently=False)
             request.session['full_name'] = "{} {}".format(account.first_name, account.surname)
             return redirect("activation_message")
     else:
@@ -111,3 +126,21 @@ def activate_email(request, uidb64, token):
         return redirect("profile")
     else:
         return render(request, "invalid_account_activation.html")
+
+
+def sampletemp(request):
+    context = {}
+    return render(request, "sampletemp.html", context)
+
+
+# @lru_cache()
+def logo_data():
+    with open(finders.find('images/email/slider3.jpeg'), 'rb') as f:
+        slider_data = f.read()
+    slider_image = MIMEImage(slider_data)
+    slider_image.add_header('Content-ID', '<slider_image>')
+    with open(finders.find('images/email/napnha_logo.png'), 'rb') as f:
+        napnha_data = f.read()
+    napnha_image = MIMEImage(napnha_data)
+    napnha_image.add_header('Content-ID', '<slider_image>')
+    return (slider_image, napnha_image)
