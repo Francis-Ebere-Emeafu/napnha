@@ -169,7 +169,7 @@ EMAIL_HOST_USER = 'freemandigit'
 EMAIL_HOST_PASSWORD = 'freemanbox12'
 DEFAULT_FROM_EMAIL = 'info@digifracktechnologies.com'
 SERVER_EMAIL = 'info@digifracktechnologies.com'
-EMAIL_BACKEND = 'post_office.EmailBackend'
+# EMAIL_BACKEND = 'post_office.EmailBackend'
 
 # POST_OFFICE = {
 #     'TEMPLATE_ENGINE': 'post_office',
