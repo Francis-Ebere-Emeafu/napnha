@@ -47,7 +47,7 @@ def register(request):
             subject = "Activate your NAPNHA account"
             message = "Please, click on the link to confirm your email"
             html_message = render_to_string('accounts/activate_email.html', {
-                "user": new_user,
+                "user": account.full_name,
                 "domain": current_site.domain,
                 "uid": urlsafe_base64_encode(force_bytes(new_user.pk)),
                 "token": account_activation_token.make_token(new_user)
