@@ -6,7 +6,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -18,7 +19,8 @@ SECRET_KEY = '^i*)$5bjf99xij=l-rvm-_yo7yn@ja#q&&9tl7y1q1d-0fc!8g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", 'http://napnha.emeafu.com', 'www.napnha.emeafu.com', 'napnha.emeafu.com']
+ALLOWED_HOSTS = ["127.0.0.1", 'http://napnha.emeafu.com',
+                 'www.napnha.emeafu.com', 'napnha.emeafu.com']
 
 
 # Application definition
@@ -35,6 +37,9 @@ INSTALLED_APPS = [
     'location.apps.LocationConfig',
     'streams.apps.StreamsConfig',
     'flex.apps.FlexConfig',
+
+    # third party app
+    'post_office',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +57,7 @@ ROOT_URLCONF = 'napnha.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +68,22 @@ TEMPLATES = [
             ],
         },
     },
+    # {
+    #     'BACKEND': 'post_office.template.backends.post_office.PostOfficeTemplates',
+    #     'APP_DIRS': True,
+    #     'DIRS': [],
+    #     'OPTIONS': {
+    #         'context_processors': [
+    #             'django.contrib.auth.context_processors.auth',
+    #             'django.template.context_processors.debug',
+    #             'django.template.context_processors.i18n',
+    #             'django.template.context_processors.media',
+    #             'django.template.context_processors.static',
+    #             'django.template.context_processors.tz',
+    #             'django.template.context_processors.request',
+    #         ]
+    #     }
+    # },
 ]
 
 WSGI_APPLICATION = 'napnha.wsgi.application'
@@ -123,14 +144,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "otherstatic"),
 )
 
-MEDIA_URL =  "/media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(STATIC_ROOT, "media")
 
 
 # Global settings of HASH-ID HashidAutoField
 HASHID_FIELD_SALT = "icode-programming"
 HASHID_FIELD_ALLOW_INT_LOOKUP = True
-
 
 
 # Sending Email to registering members
@@ -149,8 +169,11 @@ EMAIL_HOST_USER = 'freemandigit'
 EMAIL_HOST_PASSWORD = 'freemanbox12'
 DEFAULT_FROM_EMAIL = 'info@digifracktechnologies.com'
 SERVER_EMAIL = 'info@digifracktechnologies.com'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 
-# EMAIL_BACKEND = 'post_office.EmailBackend'
+# POST_OFFICE = {
+#     'TEMPLATE_ENGINE': 'post_office',
+# }
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = 'freemandigits@gmail.com'
