@@ -47,7 +47,7 @@ def register(request):
             subject = "Activate your NAPNHA account"
             message = "Please, click on the link to confirm your email"
             html_message = render_to_string('accounts/activate_email.html', {
-                "user": account.full_name,
+                "user": "{} {}".format(account.first_name, account.surname),
                 "domain": current_site.domain,
                 "uid": urlsafe_base64_encode(force_bytes(new_user.pk)),
                 "token": account_activation_token.make_token(new_user)
@@ -199,9 +199,13 @@ class AccountView(UpdateView):
 
 
 class PersonalDetailsView(AccountView):
-    fields = ["middle_name", "whatsapp_phone", "state_of_origin",
-              "lga_of_origin", "gender", "dob", "bio"]
+    fields = ["middle_name", "whatsapp_phone"]
     template_name = "accounts/personal_details.html"
+
+
+class OriginDetailsView(AccountView):
+    fields = ["state_of_origin", "lga_of_origin", "gender", "dob", "bio"]
+    template_name = "accounts/origin_details.html"
 
 
 class NYSCDetailsView(AccountView):
@@ -216,4 +220,4 @@ class PhotosView(AccountView):
 
 class ProfessionalDetailsView(AccountView):
     fields = ["profession", "ministry", "level", "office_address"]
-    template_name = "account/professional_details.html"
+    template_name = "accounts/professional_details.html"

@@ -5,7 +5,7 @@ from accounts import views
 
 urlpatterns = [
     # path("profile/<str:pk>/", views.profile, name="profile"),
-    
+
     path("register/", views.register, name="register"),
     path("login/", views.login_user, name="login"),
     path("logout/", views.logout_user, name="logout"),
@@ -17,9 +17,14 @@ urlpatterns = [
     re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
             views.activate_email, name='activate'),
     path("sampletemp/", views.sampletemp, name="sampletemp"),
-    path("personal/<str:pk>/details",
+    path("personal/<str:pk>/details/",
          views.PersonalDetailsView.as_view(), name="personal_details"),
-    # path("plan/<str:pk>/", views.PlanView.as_view(), name="profile_plan"),
-    # path("plan/<str:pk>/", views.PlanView.as_view(), name="profile_plan"),
-    # path("plan/<str:pk>/", views.PlanView.as_view(), name="profile_plan"),
+    path("origin/<str:pk>/details/",
+         views.OriginDetailsView.as_view(), name="origin_details"),
+    path("nysc/<str:pk>/details/",
+         views.NYSCDetailsView.as_view(), name="nysc_details"),
+    path("professional/<str:pk>/details/",
+         views.ProfessionalDetailsView.as_view(), name="profesional_details"),
+    path("picture/<str:pk>/details/",
+         views.PhotosView.as_view(), name="profile_picture"),
 ]

@@ -384,6 +384,15 @@ a.skype {
   margin-bottom: 20px !important;
 }
 
+
+.ride-request .good i {
+  color: #0cdd03;
+}
+
+.ride-request .bad i {
+  color: #fb5427;
+}
+
 /*--- form input style ---*/
 
 form input,

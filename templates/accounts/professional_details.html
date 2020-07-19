@@ -41,7 +41,7 @@
 
                             <div class="col-lg-8 col-sm-8">
                                 <div class="cola-form">
-                                    <h4><i class="flaticon-sign-in"></i>Register:</h4>
+                                    <h4><i class=""></i>Update Personal Profile:</h4>
 
                                     <form method="post">{% csrf_token %}
                                         {% if form.non_field_errors %}
@@ -56,13 +56,12 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.middle_name.errors %}
+                                                        {% if form.profession.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.middle_name.errors }}
+                                                            {{ form.profession.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {% comment %} <label>First Name</label> {% endcomment %}
-                                                        {{ form.middle_name }}
+                                                        {{ form.profession }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,17 +69,45 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.whatsapp_phone.errors %}
+                                                        {% if form.ministry.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.whatsapp_phone.errors }}
+                                                            {{ form.ministry.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {% comment %} <label>Middle Name</label> {% endcomment %}
-                                                        {{ form.whatsapp_phone }}
+                                                        {{ form.ministry }}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        {% if form.level.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.level.errors }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {{ form.level }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        {% if form.office_address.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.office_address.errors }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {{ form.office_address }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         <button type="submit" id="button" class="theme-btn">Update Profile</button>
                                     </form>
                                 </div>
@@ -99,20 +126,20 @@
 
 {% block extra-js %}
 <script>
-    $('#id_first_name').attr('placeholder', 'First Name');
-    $('#id_first_name').addClass('form-control1');
+    $('#id_profession').attr('placeholder', 'Profession');
+    $('#id_profession').addClass('form-control1');
 
-    $('#id_middle_name').attr('placeholder', 'Middle Name');
-    $('#id_middle_name').addClass('form-control1');
+    $('#id_ministry').attr('placeholder', 'Ministry');
+    $('#id_ministry').addClass('form-control1');
 
-    $('#id_surname').attr('placeholder', 'Surname');
-    $('#id_surname').addClass('form-control1');
+    $('#id_level').attr('placeholder', 'Level');
+    $('#id_level').addClass('form-control1');
 
-    $('#id_email').attr('placeholder', 'Email');
-    $('#id_email').addClass('form-control1');
+    $('#id_office_address').attr('placeholder', 'Office Address');
+    $('#id_office_address').addClass('form-control1');
 
-    $('#id_phone').attr('placeholder', 'Phone Number');
-    $('#id_phone').addClass('form-control1');
+    $('#id_bio').attr('placeholder', 'Biography');
+    $('#id_bio').addClass('form-control1');
 
     $('#id_password').attr('placeholder', 'Password');
     $('#id_password').addClass('form-control1');

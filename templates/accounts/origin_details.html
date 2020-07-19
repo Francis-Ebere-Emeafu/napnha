@@ -56,12 +56,12 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.state_code.errors %}
+                                                        {% if form.state_of_origin.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.state_code.errors }}
+                                                            {{ form.state_of_origin.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {{ form.state_code }}
+                                                        {{ form.state_of_origin }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,12 +69,12 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.call_up_num.errors %}
+                                                        {% if form.lga_of_origin.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.call_up_num.errors }}
+                                                            {{ form.lga_of_origin.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {{ form.call_up_num }}
+                                                        {{ form.lga_of_origin }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,16 +84,16 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.certificate.errors %}
+                                                        {% if form.gender.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.certificate.errors }}
+                                                            {{ form.gender.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {{ form.certificate }}
+                                                        {{ form.gender }}
                                                     </div>
                                                 </div>
                                             </div>
-                                            {% comment %}
+
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
@@ -106,10 +106,36 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {% endcomment %}
                                         </div>
 
-
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        {% if form.bio.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.bio.errors }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {{ form.bio }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% comment %}
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        {% if form.whatsapp_phone.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.whatsapp_phone.errors }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {{ form.whatsapp_phone }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endcomment %}
+                                        </div>
                                         <button type="submit" id="button" class="theme-btn">Update Profile</button>
                                     </form>
                                 </div>
@@ -128,14 +154,14 @@
 
 {% block extra-js %}
 <script>
-    $('#id_state_code').attr('placeholder', 'State Code');
-    $('#id_state_code').addClass('form-control1');
+    $('#id_state_of_origin').attr('placeholder', 'State of Origin');
+    $('#id_state_of_origin').addClass('form-control1');
 
-    $('#id_call_up_num').attr('placeholder', 'Call Up Number');
-    $('#id_call_up_num').addClass('form-control1');
+    $('#id_lga_of_origin').attr('placeholder', 'L.G.A');
+    $('#id_lga_of_origin').addClass('form-control1');
 
-    $('#id_certificate').attr('placeholder', 'Certificate');
-    $('#id_certificate').addClass('form-control1');
+    $('#id_gender').attr('placeholder', 'Gender');
+    $('#id_gender').addClass('form-control1');
 
     $('#id_dob').attr('placeholder', 'Date of Birth');
     $('#id_dob').addClass('form-control1');

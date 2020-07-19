@@ -37,11 +37,13 @@
               <div class="col-lg-3">
                 <div class="profile-dp">
                   <figure>
-                    {% if account.picture %}
-                    <img src="{{ account.image_url }}" alt="">
-                    {% else %}
-                    <img src="{% static 'images/resources/user.png' %}" alt="">
-                    {% endif %}
+                    <a href="{% url 'profile_picture' pk=account.pk %}">
+                      {% if account.picture %}
+                      <img src="{{ account.image_url }}" alt="">
+                      {% else %}
+                      <img src="{% static 'images/resources/user.png' %}" alt="">
+                      {% endif %}
+                    </a>
                   </figure>
                   <div class="profile-info">
                     <span class="profile-name">{{ account.full_name }}</span>
@@ -95,16 +97,47 @@
                     <!-- ****PROFILE LINKS**** -->
                     <div class="tab-pane active fade show" id="link2">
                       <div class="ride-request">
-                        <span class="flag"><i class="flaticon-racing-flag"></i></span>
+                        <!-- style="text-align: center;"  class="theme-btn" -->
+                        <span class="flag">
+
+                          <a href="{% url 'personal_details' pk=account.pk %}" title="">
+                            {% if account.whatsapp_phone is None %}
+                            <div class="bad">
+                              <i class="fa fa-id-badge" aria-hidden="true"></i>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            {% else %}
+                            <div class="good">
+                              <i class="fa fa-id-badge" aria-hidden="true"></i>
+                              <i class="fa fa-check" aria-hidden="true"></i>
+                            </div>
+                            {% endif %}
+                          </a>
+
+                        </span>
                         <ul>
-                          <li>Full Name: <span>{{ account.full_name }}</span></li>
+                          <li>Full Name: <span>{{ account.surname }} {{ account.first_name }}
+                              {{ account.middle_name }}</span></li>
                           <li>Email: <span>{{ account.email }}</span></li>
                           <li>Phone:<span>{{ account.phone }}</span></li>
                           <li>WhatsApp:<span>{{ account.whatsapp_phone }}</span></li>
-
                         </ul>
-                        <span class="flag"><i class="flaticon-racing-flag"></i></span>
 
+                        <span class="flag">
+                          <a href="{% url 'origin_details' pk=account.pk %}" title="">
+                            {% if account.dob is None and account.gender is None and account.state_of_origin is None and account.lga_of_origin is None and account.bio is None %}
+                            <div class="bad">
+                              <i class="fa fa-address-card" aria-hidden="true"></i>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            {% else %}
+                            <div class="good">
+                              <i class="fa fa-address-card" aria-hidden="true"></i>
+                              <i class="fa fa-check" aria-hidden="true"></i>
+                            </div>
+                            {% endif %}
+                          </a>
+                        </span>
                         <ul>
                           <li>Birth Date: <span>{{ account.dob }}</span></li>
                           <li>Gender: <span>{{ account.get_gender_display }}</span></li>
@@ -112,14 +145,43 @@
                           <li>LGA:<span>{{ account.lga_of_origin }}</span></li>
                           <li>Biography:<span>{{ account.bio }}</span></li>
                         </ul>
-                        <span class="flag"><i class="flaticon-racing-flag"></i></span>
+
+                        <span class="flag">
+                          <a href="{% url 'nysc_details' pk=account.pk %}" title="">
+                            {% if account.state_code is None and account.call_up_num is None%}
+                            <div class="bad">
+                              <i class="fa fa-flag-o" aria-hidden="true"></i>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            {% else %}
+                            <div class="good">
+                              <i class="fa fa-flag-o" aria-hidden="true"></i>
+                              <i class="fa fa-check" aria-hidden="true"></i>
+                            </div>
+                            {% endif %}
+                          </a>
+                        </span>
 
                         <ul>
                           <li>NAPNHA Number: <span>{{ account.napnha_number }}</span></li>
                           <li>State Code: <span>{{ account.state_code }}</span></li>
                           <li>Call Up Number: <span>{{ account.call_up_num }}</span></li>
                         </ul>
-                        <span class="flag"><i class="flaticon-racing-flag"></i></span>
+                        <span class="flag">
+                          <a href="{% url 'profesional_details' pk=account.pk %}" title="">
+                            {% if account.profession is None and account.ministry is None and account.level is None and account.office_address is None %}
+                            <div class="bad">
+                              <i class="fa fa-briefcase" aria-hidden="true"></i>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            {% else %}
+                            <div class="good">
+                              <i class="fa fa-briefcase" aria-hidden="true"></i>
+                              <i class="fa fa-check" aria-hidden="true"></i>
+                            </div>
+                            {% endif %}
+                          </a>
+                        </span>
 
                         <ul>
                           <li>Profession: <span>{{ account.profession }}</span></li>
@@ -127,7 +189,6 @@
                           <li>Level: <span>{{ account.level }}</span></li>
                           <li>Office Address:<span>{{ account.office_address }}</span></li>
                         </ul>
-                        <span class="flag"><i class="flaticon-racing-flag"></i></span>
                       </div>
                     </div>
 
