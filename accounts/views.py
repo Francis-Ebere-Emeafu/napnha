@@ -215,7 +215,7 @@ class NYSCDetailsView(AccountView):
 
 class PhotosView(AccountView):
     fields = ["picture"]
-    template_name = "account/picture.html"
+    template_name = "accounts/picture.html"
 
 
 class ProfessionalDetailsView(AccountView):

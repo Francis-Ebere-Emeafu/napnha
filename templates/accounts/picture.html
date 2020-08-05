@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block head_title %}Personal Details{% endblock head_title %}
+
+{% block content %}
+
+<div class="sub-head blackish ext-low-opacity">
+    <div class="bg-image" style="background-image: url({% static 'images/slider/napnha2.png' %})"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cola-head">
+                    <div class="head-meta">
+                        <h4><a href="{% url 'profile' %}">Profile</a></h4>
+                        <!-- <p>( Login to your account. )</p> -->
+                    </div>
+
+                    <div class="info-links">
+                        <a href="#" title="">NAPNHA Exclusive Profile</a>
+                        <a href="#" title="">Update your Personal Details</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- subhead -->
+
+<section>
+    <div class="space">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="login-sec">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+
+                            </div>
+
+                            <div class="col-lg-8 col-sm-8">
+                                <div class="cola-form">
+                                    <h4><i class="flaticon-sign-in"></i>Update Profile:</h4>
+
+                                    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        {% if form.non_field_errors %}
+                                        {% for error in form.non_field_errors %}
+                                        <div class="alert alert-danger">
+                                            {{ error }}
+                                        </div>
+                                        {% endfor %}
+                                        {% endif %}
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        {% if form.picture.errors %}
+                                                        <div class="alert alert-danger">
+                                                            {{ form.picture.errors }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {% comment %} <label>Upload Picture</label> {% endcomment %}
+                                                        {{ form.picture }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <button type="submit" id="button" class="theme-btn">Upload Profile
+                                            Picture</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- form section -->
+
+
+{% endblock content %}
+
+
+{% block extra-js %}
+<script>
+    $('#id_first_name').attr('placeholder', 'First Name');
+    $('#id_first_name').addClass('form-control1');
+</script>
+{% endblock extra-js %}
