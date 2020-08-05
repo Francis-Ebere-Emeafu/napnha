@@ -1,6 +1,7 @@
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.contrib.staticfiles import finders
+from django.db.models.aggregates import Max
 from django.template.loader import render_to_string
 from django.utils import six
 from django.utils import timezone
@@ -109,3 +110,9 @@ def get_time_constants():
         greeting = 'Good evening'
 
     return (day_of_week, daytime, greeting)
+
+
+def get_napnha_number():
+    max_num = Account.objects.aggregate(
+        Max('napnha_number'))['napnha_number__max']
+    return max_num + 1

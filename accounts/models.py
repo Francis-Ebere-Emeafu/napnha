@@ -78,6 +78,15 @@ class Account(models.Model):
         else:
             return ""
 
+    @property
+    def napnha_id_number(self):
+        if self.napnha_number:
+            napnha_no = '{:0>4}'.format(self.napnha_number)
+            year = self.registered_on.strftime('%y')
+            return 'NAPNHA{}{}'.format(year, napnha_no)
+        else:
+            return 'N/A'
+
 
 class Renewal(models.Model):
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
