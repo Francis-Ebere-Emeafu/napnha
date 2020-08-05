@@ -168,8 +168,9 @@
                         </span>
 
                         <ul>
-                          <li>NAPNHA Number:
-                            <span>{% if account.napnha_number %}{{ account.napnha_number }}{% endif %}</span></li>
+                          {% if account.napnha_number %}
+                          <li>NAPNHA Number: <span>{{ account.napnha_number }}</span></li>
+                          {% endif %}
                           <li>State Code: <span>{% if account.state_code %}{{ account.state_code }}{% endif %}</span>
                           </li>
                           <li>Call Up Number:
@@ -177,7 +178,7 @@
                         </ul>
                         <span class="flag">
                           <a href="{% url 'profesional_details' pk=account.pk %}" title="">
-                            {% if account.profession is None and account.ministry is None and account.level is None and account.office_address is None %}
+                            {% if account.profession is None or account.ministry is None or account.level is None or account.office_address is None %}
                             <div class="bad">
                               <i class="fa fa-briefcase" aria-hidden="true"></i>
                               <i class="fa fa-times" aria-hidden="true"></i>
@@ -192,10 +193,13 @@
                         </span>
 
                         <ul>
-                          <li>Profession: <span>{{ account.profession }}</span></li>
-                          <li>Ministry: <span>{{ account.ministry }}</span></li>
-                          <li>Level: <span>{{ account.level }}</span></li>
-                          <li>Office Address:<span>{{ account.office_address }}</span></li>
+                          <li>Profession: <span>{% if account.profession %}{{ account.profession }}{% endif %}</span>
+                          </li>
+                          <li>Ministry: <span>{% if account.ministry %}{{ account.ministry }}{% endif %}</span></li>
+                          <li>Level: <span>{% if account.level %}{{ account.level }}{% endif %}</span></li>
+                          <li>Office
+                            Address:<span>{% if account.office_address %}{{ account.office_address }}{% endif %}</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
