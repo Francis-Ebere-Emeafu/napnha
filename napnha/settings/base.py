@@ -21,10 +21,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'http://napnha.emeafu.com',
     'http://napnha.org',
     'www.napnha.org',
-    'napnha.org'
+    'napnha.org',
+    'http://napnha.emeafu.com',
+    'www.napnha.emeafu.com',
+    'napnha.emeafu.com',
 ]
 
 

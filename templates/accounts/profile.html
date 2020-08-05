@@ -101,7 +101,7 @@
                         <span class="flag">
 
                           <a href="{% url 'personal_details' pk=account.pk %}" title="">
-                            {% if account.whatsapp_phone is None %}
+                            {% if account.whatsapp_phone is None or account.middle_name is None %}
                             <div class="bad">
                               <i class="fa fa-id-badge" aria-hidden="true"></i>
                               <i class="fa fa-times" aria-hidden="true"></i>
@@ -117,15 +117,17 @@
                         </span>
                         <ul>
                           <li>Full Name: <span>{{ account.surname }} {{ account.first_name }}
-                              {{ account.middle_name }}</span></li>
+                              {% if account.middle_name %}{{ account.middle_name }}{% endif %}</span></li>
                           <li>Email: <span>{{ account.email }}</span></li>
                           <li>Phone:<span>{{ account.phone }}</span></li>
-                          <li>WhatsApp:<span>{{ account.whatsapp_phone }}</span></li>
+                          <li>
+                            WhatsApp:<span>{% if account.whatsapp_phone %}{{ account.whatsapp_phone }}{% endif %}</span>
+                          </li>
                         </ul>
 
                         <span class="flag">
                           <a href="{% url 'origin_details' pk=account.pk %}" title="">
-                            {% if account.dob is None and account.gender is None and account.state_of_origin is None and account.lga_of_origin is None and account.bio is None %}
+                            {% if account.dob is None or account.gender is None or account.state_of_origin is None or account.lga_of_origin is None or account.bio is None %}
                             <div class="bad">
                               <i class="fa fa-address-card" aria-hidden="true"></i>
                               <i class="fa fa-times" aria-hidden="true"></i>
@@ -139,16 +141,19 @@
                           </a>
                         </span>
                         <ul>
-                          <li>Birth Date: <span>{{ account.dob }}</span></li>
-                          <li>Gender: <span>{{ account.get_gender_display }}</span></li>
-                          <li>State: <span>{{ account.state_of_origin }}</span></li>
-                          <li>LGA:<span>{{ account.lga_of_origin }}</span></li>
-                          <li>Biography:<span>{{ account.bio }}</span></li>
+                          <li>Birth Date: <span>{% if account.dob %}{{ account.dob }}{% endif %}</span></li>
+                          <li>Gender:
+                            <span>{% if account.get_gender_display %}{{ account.get_gender_display }}{% endif %}</span>
+                          </li>
+                          <li>State:
+                            <span>{% if account.state_of_origin %}{{ account.state_of_origin }}{% endif %}</span></li>
+                          <li>LGA:<span>{% if account.lga_of_origin %}{{ account.lga_of_origin }}{% endif %}</span></li>
+                          <li>Biography:<span>{% if account.bio %}{{ account.bio }}{% endif %}</span></li>
                         </ul>
 
                         <span class="flag">
                           <a href="{% url 'nysc_details' pk=account.pk %}" title="">
-                            {% if account.state_code is None and account.call_up_num is None%}
+                            {% if account.state_code is None or account.call_up_num is None%}
                             <div class="bad">
                               <i class="fa fa-flag-o" aria-hidden="true"></i>
                               <i class="fa fa-times" aria-hidden="true"></i>
@@ -163,9 +168,12 @@
                         </span>
 
                         <ul>
-                          <li>NAPNHA Number: <span>{{ account.napnha_number }}</span></li>
-                          <li>State Code: <span>{{ account.state_code }}</span></li>
-                          <li>Call Up Number: <span>{{ account.call_up_num }}</span></li>
+                          <li>NAPNHA Number:
+                            <span>{% if account.napnha_number %}{{ account.napnha_number }}{% endif %}</span></li>
+                          <li>State Code: <span>{% if account.state_code %}{{ account.state_code }}{% endif %}</span>
+                          </li>
+                          <li>Call Up Number:
+                            <span>{% if account.call_up_num %}{{ account.call_up_num }}{% endif %}</span></li>
                         </ul>
                         <span class="flag">
                           <a href="{% url 'profesional_details' pk=account.pk %}" title="">
