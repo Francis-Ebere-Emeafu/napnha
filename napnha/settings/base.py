@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accounts.apps.AccountsConfig',
+    'contact.apps.ContactConfig',
     'location.apps.LocationConfig',
     'streams.apps.StreamsConfig',
     'flex.apps.FlexConfig',
