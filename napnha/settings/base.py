@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 SECRET_KEY = '^i*)$5bjf99xij=l-rvm-_yo7yn@ja#q&&9tl7y1q1d-0fc!8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
