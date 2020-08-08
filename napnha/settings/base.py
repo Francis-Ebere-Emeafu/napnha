@@ -146,16 +146,14 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "/home/freemandigit/webapps/awardees/napnha/static"
-# os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "otherstatic"),
 )
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = "/home/freemandigit/webapps/awardees/napnha/static/media"
-# os.path.join(STATIC_ROOT, "media")
+MEDIA_ROOT = os.path.join(STATIC_ROOT, "media")
 
 
 # Global settings of HASH-ID HashidAutoField
