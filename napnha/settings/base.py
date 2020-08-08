@@ -153,7 +153,8 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(STATIC_ROOT, "media")
+MEDIA_ROOT = "/home/freemandigit/webapps/awardees/napnha/static/media"
+# os.path.join(STATIC_ROOT, "media")
 
 
 # Global settings of HASH-ID HashidAutoField
