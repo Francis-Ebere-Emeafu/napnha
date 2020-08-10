@@ -53,7 +53,7 @@ def register(request):
                 "token": account_activation_token.make_token(new_user)
             })
 
-            from_email = 'info@digifracktechnologies.com'
+            from_email = 'registration@napnha.org'
             to_email = username
             send_mail(
                 subject,

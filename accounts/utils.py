@@ -15,7 +15,7 @@ from post_office import mail
 
 from accounts.models import Account
 
-FROM_EMAIL = "info@digifracktechnologies.com"
+FROM_EMAIL = "registration@napnha.org"
 
 
 def get_username_for_auth(input_username):

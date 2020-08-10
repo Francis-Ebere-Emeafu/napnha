@@ -173,10 +173,10 @@ HASHID_FIELD_ALLOW_INT_LOOKUP = True
 # Sending Email to registering members
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.webfaction.com'
-EMAIL_HOST_USER = 'freemandigit'
-EMAIL_HOST_PASSWORD = 'freemanbox12'
-DEFAULT_FROM_EMAIL = 'info@digifracktechnologies.com'
-SERVER_EMAIL = 'info@digifracktechnologies.com'
+EMAIL_HOST_USER = 'napnha_registration'
+EMAIL_HOST_PASSWORD = 'NAPNHA.password'
+DEFAULT_FROM_EMAIL = 'registration@napnha.org'
+SERVER_EMAIL = 'registration@napnha.org'
 # EMAIL_BACKEND = 'post_office.EmailBackend'
 
 # POST_OFFICE = {
