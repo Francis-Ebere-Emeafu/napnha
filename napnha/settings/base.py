@@ -20,6 +20,7 @@ SECRET_KEY = '^i*)$5bjf99xij=l-rvm-_yo7yn@ja#q&&9tl7y1q1d-0fc!8g'
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
     '127.0.0.1',
     'http://napnha.org',
     'www.napnha.org',
@@ -27,6 +28,7 @@ ALLOWED_HOSTS = [
     'http://napnha.emeafu.com',
     'www.napnha.emeafu.com',
     'napnha.emeafu.com',
+    '162.243.173.228',
 ]
 
 

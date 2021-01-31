@@ -4,6 +4,7 @@ from .base import *
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
     '127.0.0.1',
     'http://napnha.emeafu.com',
     'http://napnha.org',
@@ -13,6 +14,18 @@ ALLOWED_HOSTS = [
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'napnha_db',
+        'USER': 'napnha_db',
+        'PASSWORD': 'pass.p1985',
+        'HOST': 'localhost',
+        'PORT': '',
+        'PORT': ''
+    }
+}
 
 # DATABASES = {
 #     'default': {

@@ -15,7 +15,7 @@ def message(request):
             form.save()
 
             if send_copy:
-                print("There is Send Copy Checked!")
+                print("Send Copy is Checked!")
             messages.success(
                 request, 'Thank you! Your message has been received!')
             return redirect('thanks')
