@@ -25,10 +25,10 @@ ALLOWED_HOSTS = [
     'http://napnha.org',
     'www.napnha.org',
     'napnha.org',
-    'http://napnha.emeafu.com',
-    'www.napnha.emeafu.com',
-    'napnha.emeafu.com',
     '162.243.173.228',
+    'localhost',
+    '127.0.0.1',
+    'http://napnha.org',
 ]
 
 
@@ -102,12 +102,19 @@ WSGI_APPLICATION = 'napnha.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'napnha_db',
+        'USER': 'napnha_db',
+        'PASSWORD': 'pass.p1985',
+        'HOST': 'localhost',
+        'PORT': '',
+        'PORT': ''
     }
 }
+
 
 
 # Password validation
@@ -190,3 +197,9 @@ SERVER_EMAIL = 'registration@napnha.org'
 # EMAIL_HOST_PASSWORD = 'freemanbox12'
 # EMAIL_PORT = 587
 # https://medium.com/@frfahim/django-registration-with-confirmation-email-bb5da011e4ef
+
+
+try:
+    from .local_settings import *
+except:
+    pass

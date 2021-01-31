@@ -9,7 +9,8 @@ ALLOWED_HOSTS = [
     'http://napnha.emeafu.com',
     'http://napnha.org',
     'www.napnha.org',
-    'napnha.org'
+    'napnha.org',
+    '162.243.173.228',
 ]
 
 # Database
