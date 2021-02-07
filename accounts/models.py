@@ -22,8 +22,8 @@ class Account(models.Model):
     phone = models.CharField(max_length=20, null=True, blank=True)
     whatsapp_phone = models.CharField(max_length=20, null=True, blank=True)
 
-    state_of_origin = models.ForeignKey(State, related_name='state_of_origin', on_delete=models.PROTECT, null=True, blank=True)
-    lga_of_origin = models.ForeignKey(LGA, on_delete=models.PROTECT, null=True, blank=True)
+    state_of_origin = models.ForeignKey(State, related_name='state_of_origin', on_delete=models.SET_NULL, null=True, blank=True)
+    lga_of_origin = models.ForeignKey(LGA, on_delete=models.SET_NULL, null=True, blank=True)
     community_of_origin = models.CharField(max_length=100, null=True, blank=True)
     gender = models.PositiveIntegerField(choices=SEX, null=True, blank=True)
     dob = models.DateField(verbose_name='Date of birth', null=True, blank=True)

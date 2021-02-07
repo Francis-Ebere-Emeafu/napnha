@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import RegisterPermission
+
+@admin.register(RegisterPermission)
+class RegisterPermissionAdmin(admin.ModelAdmin):
+    list_display = ['name', 'status']
