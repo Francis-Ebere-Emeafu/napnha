@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from datetime import datetime
 
+from location.models import State, LGA
 # from hashid_field import HashidAutoField
 
 
@@ -21,22 +22,28 @@ class Account(models.Model):
     phone = models.CharField(max_length=20, null=True, blank=True)
     whatsapp_phone = models.CharField(max_length=20, null=True, blank=True)
 
-    state_of_origin = models.CharField(max_length=30, null=True, blank=True)
-    lga_of_origin = models.CharField(max_length=30, null=True, blank=True)
+    state_of_origin = models.ForeignKey(State, related_name='state_of_origin', on_delete=models.PROTECT, null=True, blank=True)
+    lga_of_origin = models.ForeignKey(LGA, on_delete=models.PROTECT, null=True, blank=True)
+    community_of_origin = models.CharField(max_length=100, null=True, blank=True)
     gender = models.PositiveIntegerField(choices=SEX, null=True, blank=True)
     dob = models.DateField(verbose_name='Date of birth', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
 
+    year_of_award = models.DateField(null=True, blank=True)
+    nysc_service_year = models.DateField(null=True, blank=True)
+    state_of_service = models.ForeignKey(State, related_name='state_of_service', on_delete=models.PROTECT, null=True, blank=True)
+    place_of_primary_assignment = models.CharField(max_length=300, null=True, blank=True)
+
     state_code = models.CharField(max_length=30, null=True, blank=True)
     call_up_num = models.CharField(max_length=30, null=True, blank=True)
-    certificate = models.ImageField(
-        upload_to='certificates', null=True, blank=True)
+    certificate = models.ImageField(upload_to='certificates', null=True, blank=True)
     napnha_number = models.PositiveIntegerField(null=True, blank=True)
 
     profession = models.CharField(max_length=200, blank=True, null=True)
-    ministry = models.CharField(max_length=200, blank=True, null=True)
-    level = models.CharField(max_length=200, blank=True)
+    office_or_ministry = models.CharField(max_length=200, blank=True, null=True)
+    current_level = models.CharField(max_length=200, blank=True)
     office_address = models.TextField(blank=True, null=True)
+    residential_address = models.TextField(blank=True, null=True)
 
     picture = models.ImageField(upload_to="profile", null=True, blank=True)
 

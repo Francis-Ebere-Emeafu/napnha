@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'accounts.apps.AccountsConfig',
     'contact.apps.ContactConfig',
+    'core.apps.CoreConfig',
+
     'location.apps.LocationConfig',
     'streams.apps.StreamsConfig',
     'flex.apps.FlexConfig',
