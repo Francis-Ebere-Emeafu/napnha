@@ -23,8 +23,18 @@ from accounts.utils import (
     get_time_constants,
 )
 
+from core.models import RegisterPermission
+
 
 def register(request):
+    option = RegisterPermission.objects.all().last()
+    print(option)
+
+    if not option.status:
+        messages.warning(
+            request, "Regstration is not open to the public")
+        return redirect("home")
+
     if request.method == 'POST':
         form = RegForm(request.POST)
         if form.is_valid():
@@ -55,14 +65,14 @@ def register(request):
 
             from_email = 'registration@napnha.org'
             to_email = username
-            send_mail(
-                subject,
-                message,
-                from_email,
-                [to_email, ],
-                fail_silently=False,
-                html_message=html_message
-            )
+            # send_mail(
+            #     subject,
+            #     message,
+            #     from_email,
+            #     [to_email, ],
+            #     fail_silently=False,
+            #     html_message=html_message
+            # )
 
             # email = EmailMultiAlternatives(
             #     subject,
