@@ -214,12 +214,12 @@ class PersonalDetailsView(AccountView):
 
 
 class OriginDetailsView(AccountView):
-    fields = ["state_of_origin", "lga_of_origin", "gender", "dob", "bio"]
+    fields = ["state_of_origin", "lga_of_origin", "community_of_origin", "gender", "dob", "bio"]
     template_name = "accounts/origin_details.html"
 
 
 class NYSCDetailsView(AccountView):
-    fields = ["state_code", "call_up_num", "certificate"]
+    fields = ["year_of_award", "nysc_service_year", "state_of_service", "state_code", "call_up_num", "place_of_primary_assignment", "certificate"]
     template_name = "accounts/nysc_details.html"
 
 
@@ -229,5 +229,5 @@ class PhotosView(AccountView):
 
 
 class ProfessionalDetailsView(AccountView):
-    fields = ["profession", "ministry", "level", "office_address"]
+    fields = ["profession", "office_or_ministry", "current_level", "office_address", "residential_address"]
     template_name = "accounts/professional_details.html"

@@ -69,12 +69,12 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.ministry.errors %}
+                                                        {% if form.office_or_ministry.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.ministry.errors }}
+                                                            {{ form.office_or_ministry.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {{ form.ministry }}
+                                                        {{ form.office_or_ministry }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,12 +84,12 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        {% if form.level.errors %}
+                                                        {% if form.current_level.errors %}
                                                         <div class="alert alert-danger">
-                                                            {{ form.level.errors }}
+                                                            {{ form.current_level.errors }}
                                                         </div>
                                                         {% endif %}
-                                                        {{ form.level }}
+                                                        {{ form.current_level }}
                                                     </div>
                                                 </div>
                                             </div>
