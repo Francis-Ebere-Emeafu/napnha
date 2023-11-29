@@ -24,7 +24,6 @@ ALLOWED_HOSTS = [
     'http://napnha.org',
     'www.napnha.org',
     'napnha.org',
-    '162.243.173.228',
     'localhost',
     '127.0.0.1',
     'http://napnha.org',
@@ -46,8 +45,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
 
     'location.apps.LocationConfig',
-    'streams.apps.StreamsConfig',
-    'flex.apps.FlexConfig',
+    
 
     # third party app
     'post_office',
@@ -79,6 +77,7 @@ TEMPLATES = [
             ],
         },
     },
+    
     # {
     #     'BACKEND': 'post_office.template.backends.post_office.PostOfficeTemplates',
     #     'APP_DIRS': True,
@@ -104,17 +103,17 @@ WSGI_APPLICATION = 'napnha.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'napnha_db',
-        'USER': 'napnha_db',
-        'PASSWORD': 'pass.p1985',
-        'HOST': 'localhost',
-        'PORT': '',
-        'PORT': ''
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'napnha_db',
+#         'USER': 'napnha_db',
+#         'PASSWORD': 'NAPNHA.password',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#         'PORT': ''
+#     }
+# }
 
 
 
@@ -172,15 +171,6 @@ HASHID_FIELD_ALLOW_INT_LOOKUP = True
 
 
 # Sending Email to registering members
-# EMAIL_HOST = 'smtp.webfaction.com'
-# EMAIL_HOST_USER = 'napnha_registrations'
-# EMAIL_HOST_PASSWORD = 'pass.p1985'
-# DEFAULT_FROM_EMAIL = 'registrations@napnha.emeafu.com'
-# SERVER_EMAIL = 'registrations@napnha.emeafu.com'
-# EMAIL_BACKEND = 'post_office.EmailBackend'
-
-
-# Sending Email to registering members
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_HOST_USER = 'napnha_registration'
@@ -192,11 +182,7 @@ SERVER_EMAIL = 'registration@napnha.org'
 # POST_OFFICE = {
 #     'TEMPLATE_ENGINE': 'post_office',
 # }
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'freemandigits@gmail.com'
-# EMAIL_HOST_PASSWORD = 'freemanbox12'
-# EMAIL_PORT = 587
+
 # https://medium.com/@frfahim/django-registration-with-confirmation-email-bb5da011e4ef
 
 

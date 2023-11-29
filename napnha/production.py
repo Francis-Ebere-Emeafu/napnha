@@ -1,7 +1,7 @@
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -10,31 +10,19 @@ ALLOWED_HOSTS = [
     'http://napnha.org',
     'www.napnha.org',
     'napnha.org',
-    '162.243.173.228',
 ]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'napnha_db',
-        'USER': 'napnha_db',
-        'PASSWORD': 'pass.p1985',
-        'HOST': 'localhost',
-        'PORT': '',
-        'PORT': ''
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': '',
-#         'USER': '',
-#         'PASSWORD': '',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'napnha_db',
+#         'USER': 'napnha_db',
+#         'PASSWORD': 'NAPNHA.password',
 #         'HOST': 'localhost',
+#         'PORT': '',
 #         'PORT': ''
 #     }
 # }
